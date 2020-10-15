@@ -11,7 +11,7 @@ feature 'checking gender' do
   scenario 'submiting female' do
     visit('/')
     fill_in :Name, with: 'Emily'
-    check 'Female'
+    choose 'Female'
     click_button "Submit"
     expect(page).to have_content 'female'
   end
@@ -19,7 +19,7 @@ feature 'checking gender' do
   scenario 'submitting male' do
     visit('/')
     fill_in :Name, with: 'Emilio'
-    check 'Male'
+    choose 'Male'
     click_button "Submit" 
     expect(page).to have_content 'male'
   end
