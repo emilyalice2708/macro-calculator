@@ -7,6 +7,9 @@ class Macros < Sinatra::Base
 
     post '/results' do
         @name = params[:Name]
+        p params
+        @gender = 'female' if params[:female] == 'on' 
+        @gender = 'male' if params[:male] == 'on'
         erb :results
     end
 
