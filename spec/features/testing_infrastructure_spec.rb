@@ -1,18 +1,15 @@
+require './lib/app.rb'
+
 feature 'Entering name' do
   scenario 'submitting name' do
-    visit('/')
-    fill_in :Name, with: 'Emily'
-    click_button "Submit"
+    enter_info
     expect(page).to have_content 'Emily'
   end
 end
 
 feature 'checking gender' do
   scenario 'submiting female' do
-    visit('/')
-    fill_in :Name, with: 'Emily'
-    choose 'Female'
-    click_button "Submit"
+    enter_info
     expect(page).to have_content 'female'
   end
 
@@ -23,4 +20,11 @@ feature 'checking gender' do
     click_button "Submit" 
     expect(page).to have_content 'male'
   end
+ end
+
+ feature 'calculating calories' do
+    scenario 'displays correct TDEE' do
+        enter_info
+        expect(page).to have_content '1167'
+    end
  end

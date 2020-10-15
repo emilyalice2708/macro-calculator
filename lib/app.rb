@@ -9,6 +9,16 @@ class Macros < Sinatra::Base
         @name = params[:Name]
         p params
         params[:gender] == 'female' ? @gender = 'female' : @gender = 'male'
+        @age = params[:age].to_i
+        @height = params[:height].to_i
+        @weight = params[:weight].to_i
+        if @gender == 'female'
+            @bmr = 655.1 + (0.563 * @weight) + (1.85 * @height) - (4.676 * @age)
+        else
+            @bmr = 66.47 + (13.75 * @weight) + (5.003 * @height) - (6.755 * @age)
+        end
+        @tdee = (@bmr * 1.375).round
+
         erb :results
     end
 
