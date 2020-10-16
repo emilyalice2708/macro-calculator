@@ -13,11 +13,17 @@
     label.gender {
       display: inline;
     }
+    .error {
+      color: red;
+    }
   </style>
 </head>
 
 <body>
   <h1>Macros Calculator</h1>
+  <%if @errorMessage%>
+  <p class='error'><%=@errorMessage%></p>
+  <%end%>
   <form action='/results' method='post'>
     <label for='Name'>
       Name: 
