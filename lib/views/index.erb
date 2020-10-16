@@ -1,29 +1,56 @@
-<h1>Macros Calculator</h1>
+<!DOCTYPE html>
+<html>
 
-<form action='/results' method='post'>
-  <label for='Name'>
-    Name: 
-    <input type='text' name='Name'>
-  </label>
-  <label for='female'>
-    Female
-    <input type='radio' name='gender' value='female'>
-  </label>
-  <label for='male'>
-    Male 
-    <input type='radio' name='gender' value='male'>
-  </label>
-  <label for='age'>
-    Age 
-    <input type='number' name='age'>
-  </label>
-  <label for='height'>
-    Height (cm)
-    <input type='number' name='height'>
-  </label>
-  <label for='weight'>
-    Weight (kg)
-    <input type='number' name='weight'>
-  </label>
-  <input type='submit' value='Submit'>
-</form> 
+<head>
+  <title> Macro Calculator </title>
+  <style>
+  body {
+    background-color: linen;
+    }
+  label {
+      display: block;
+    }
+    label.gender {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Macros Calculator</h1>
+  <form action='/results' method='post'>
+    <label for='Name'>
+      Name: 
+      <input type='text' name='Name'>
+    </label>
+    <br>
+    <label for='female', class='gender'>
+      Female
+      <input type='radio' name='gender' value='female'>
+    </label>
+    <label for='male', class='gender'>
+      Male 
+      <input type='radio' name='gender' value='male'>
+    </label>
+    <br>
+    <br>
+    <label for='age'>
+      Age 
+      <input type='number' name='age'>
+    </label>
+    <br>
+    <label for='height'>
+      Height (cm)
+      <input type='number' name='height'>
+    </label>
+    <br>
+    <label for='weight'>
+      Weight (kg)
+      <input type='number' name='weight'>
+    </label>
+    <br>
+    <input type='submit' value='Submit'> 
+  </form> 
+</body>
+
+</html>

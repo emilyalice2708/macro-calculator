@@ -1,6 +1,25 @@
-<h1>Your Results</h1>
-<p>Thanks <%=@name%>! 
-It is recommended that a <%=@gender%> of your age, height and weight should be consuming the following:</p>
-Calories: <%=@tdee%>
+<!DOCTYPE html>
+<html>
 
-The above numbers were calculated under the assumption that you are performing light exercise!
+<head>
+  <title> Results </title>
+  <style>
+  body {
+      background-color: linen;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Your Results</h1>
+  <p>Thanks, <%=@person.name%>! 
+    <br>It is recommended that a <%=@person.gender%> of your age, height and weight should consume roughly the following:</p>
+  </p>
+  <ul>
+    <li>Calories: <%=@calculator.tdee%></li>
+    <li>Carbs: <%=@calculator.carbs%>g</li>
+    <li>Fat: <%=@calculator.fat%>g</li>
+    <li>Protein: <%=@calculator.protein%>g</li>
+  </ul>
+<br>
+The above numbers were calculated under the assumption that you are performing light exercise.
